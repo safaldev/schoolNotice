@@ -4,16 +4,12 @@ import { useState } from "react";
 
 
 
-
-
-
-
 const Main = () => {
 
 	let noticeNumber;
 
 	const getNoticeData = async () => {
-		axios.get('http://localhost:8000/api/v1/noticeData')
+		axios.get('https://tribhuwan-admin.vercel.app/api/v1/noticeData')
 		  .then(response => {noticeNumber = response.data.length
 			console.log(noticeNumber)})
 		  .catch(error => {console.log(error)})
@@ -37,7 +33,7 @@ const Main = () => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
-			const url = "http://localhost:8000/api/v1/notice/add";
+			const url = "https://tribhuwan-admin.vercel.app/api/v1/notice/add";
 			const { data: res } = await axios.post(url, data);
 		} catch (error) {
 			if (
