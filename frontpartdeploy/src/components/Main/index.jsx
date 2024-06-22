@@ -17,6 +17,10 @@ const Main = () => {
 
 	getNoticeData();
 
+	const refreshPage = () => {
+    		window.location.reload();
+	} 
+
 	const handleLogout = () => {
 		localStorage.removeItem("token");
 		window.location.reload();
@@ -44,6 +48,7 @@ const Main = () => {
 				setError(error.response.data.message);
 			}
 		}
+		refreshPage();
 	};
 
 	return (
@@ -78,7 +83,7 @@ const Main = () => {
 							className={styles.input}
 						/>
 						<br />
-						<div className={styles.error_msg}>Notice Is Added In One Click</div>
+						<div className={styles.error_msg}>Call NoteX Studios on problem</div>
 						{error && <div className={styles.error_msg}>{error}</div>}
 						<button type="submit" className={styles.green_btn}>
 							Add Notice
