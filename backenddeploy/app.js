@@ -35,7 +35,7 @@ app.use("/api/v1/notice", noticeRouter)
 
 
 app.get('/', (req, res) => {
-    res.json("Hello Vercel")
+    res.json("Vercel Working")
 })
 
 app.get('/api/v1/noticeData', (req, res) => {
@@ -44,7 +44,7 @@ app.get('/api/v1/noticeData', (req, res) => {
 })
 
 // user routes
-app.use("/api/v1/users", userRoutes)
+// app.use("/api/v1/users", userRoutes)
 app.use("/api/v1/login", authRoutes)
 
 
