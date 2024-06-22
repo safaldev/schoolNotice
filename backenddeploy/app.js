@@ -39,7 +39,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/api/v1/noticeData', (req, res) => {
-            dataCollector()
+            // dataCollector()
             res.send(noticeData)
 })
 
