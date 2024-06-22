@@ -35,7 +35,6 @@ const Main = () => {
 		try {
 			const url = "https://tribhuwan-admin.vercel.app/api/v1/notice/add";
 			const { data: res } = await axios.post(url, data);
-			document.getElementById("noticeForm").reset();
 		} catch (error) {
 			if (
 				error.response &&
@@ -79,6 +78,7 @@ const Main = () => {
 							className={styles.input}
 						/>
 						<br />
+						<div className={styles.error_msg}>Notice Is Added In One Click</div>
 						{error && <div className={styles.error_msg}>{error}</div>}
 						<button type="submit" className={styles.green_btn}>
 							Add Notice
