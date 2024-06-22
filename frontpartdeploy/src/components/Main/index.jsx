@@ -35,6 +35,7 @@ const Main = () => {
 		try {
 			const url = "https://tribhuwan-admin.vercel.app/api/v1/notice/add";
 			const { data: res } = await axios.post(url, data);
+			document.getElementById("noticeForm").reset();
 		} catch (error) {
 			if (
 				error.response &&
@@ -56,7 +57,7 @@ const Main = () => {
 			</nav>
 			<div className={styles.login_form_container}>
 				<div className={styles.left}>
-					<form className={styles.form_container} onSubmit={handleSubmit} >
+					<form id="noticeForm" className={styles.form_container} onSubmit={handleSubmit} >
 						<h1>Provide A Notice</h1>
 						<div className={styles.error_msg}>Total Notice:{noticeNumber}</div>
 						<input
