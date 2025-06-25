@@ -7,7 +7,7 @@ import { useState } from "react";
 const Main = () => {
 
 	let noticeNumber;
-	let intCount;
+	const [noticeNum, setNoticeNum] = useState("");
 
 	const getNoticeData = async () => {
 		axios.get('https://tribhuwan-admin.vercel.app/api/v1/noticeData')
@@ -19,6 +19,7 @@ const Main = () => {
 	// const [count, setCount] = useState(noticeNumber);
 
 	getNoticeData();
+	setNoticeNum(noticeNumber);
 
 	const refreshPage = () => {
     		window.location.reload();
@@ -31,6 +32,7 @@ const Main = () => {
 
 	const [data, setData] = useState({ title: "", message: "" });
 	const [error, setError] = useState("");
+
 
 	const handleChange = ({ currentTarget: input }) => {
 		setData({ ...data, [input.name]: input.value });
@@ -51,6 +53,7 @@ const Main = () => {
 				setError(error.response.data.message);
 			}
 		}
+			setNoticeNum(noticeNumber);
 		refreshPage();
 	};
 
