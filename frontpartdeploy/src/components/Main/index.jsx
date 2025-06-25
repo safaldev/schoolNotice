@@ -40,6 +40,7 @@ const Main = () => {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
+		window.alert("Notice is being added, wait patiently for few seconds");
 		try {
 			const url = "https://tribhuwan-admin.vercel.app/api/v1/notice/add";
 			const { data: res } = await axios.post(url, data);
