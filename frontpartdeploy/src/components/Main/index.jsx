@@ -7,6 +7,7 @@ import { useState } from "react";
 const Main = () => {
 
 	let noticeNumber;
+	let intCount;
 
 	const getNoticeData = async () => {
 		axios.get('https://tribhuwan-admin.vercel.app/api/v1/noticeData')
@@ -14,6 +15,8 @@ const Main = () => {
 			console.log(noticeNumber)})
 		  .catch(error => {console.log(error)})
 	}
+
+	// const [count, setCount] = useState(noticeNumber);
 
 	getNoticeData();
 
@@ -85,6 +88,9 @@ const Main = () => {
 						<br />
 						<div className={styles.error_msg}>Call NoteX Studios on problem</div>
 						{error && <div className={styles.error_msg}>{error}</div>}
+						<button type="button">
+							{noticeNumber}
+						</button>
 						<button type="submit" className={styles.green_btn}>
 							Add Notice
 						</button>
