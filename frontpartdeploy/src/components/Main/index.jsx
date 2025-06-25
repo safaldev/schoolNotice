@@ -3,23 +3,22 @@ import axios from "axios";
 import { useState } from "react";
 
 
-
 const Main = () => {
 
 	let noticeNumber;
-	const [noticeNum, setNoticeNum] = useState("");
+	const [noticeNum, setNoticeNum] = useState(0);
 
 	const getNoticeData = async () => {
 		axios.get('https://tribhuwan-admin.vercel.app/api/v1/noticeData')
 		  .then(response => {noticeNumber = response.data.length
+				     setNoticeNum(noticeNumber);
 			console.log(noticeNumber , "Hello")})
 		  .catch(error => {console.log(error)})
 	}
 
-	// const [count, setCount] = useState(noticeNumber);
 
 	getNoticeData();
-	setNoticeNum(noticeNumber);
+	
 
 	const refreshPage = () => {
     		window.location.reload();
@@ -53,7 +52,6 @@ const Main = () => {
 				setError(error.response.data.message);
 			}
 		}
-			setNoticeNum(noticeNumber);
 		refreshPage();
 	};
 
