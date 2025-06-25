@@ -53,6 +53,7 @@ const Main = () => {
 			}
 		}
 		refreshPage();
+		getNoticeData();
 	};
 
 	return (
