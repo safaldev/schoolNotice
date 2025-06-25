@@ -66,6 +66,9 @@ const Main = () => {
 				<div className={styles.left}>
 					<form id="noticeForm" className={styles.form_container} onSubmit={handleSubmit} >
 						<h1>Provide A Notice</h1>
+						<div className={styles.error_msg}>
+							{noticeNumber}
+						</div>
 						<div className={styles.error_msg}>Total Notice:{noticeNumber}</div>
 						<input
 							type="text"
@@ -88,9 +91,7 @@ const Main = () => {
 						<br />
 						<div className={styles.error_msg}>Call NoteX Studios on problem</div>
 						{error && <div className={styles.error_msg}>{error}</div>}
-						<button type="button">
-							{noticeNumber}
-						</button>
+						
 						<button type="submit" className={styles.green_btn}>
 							Add Notice
 						</button>
