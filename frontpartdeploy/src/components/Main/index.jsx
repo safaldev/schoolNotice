@@ -70,7 +70,7 @@ const Main = () => {
 					<form id="noticeForm" className={styles.form_container} onSubmit={handleSubmit} >
 						<h1>Provide A Notice</h1>
 					
-						<div className={styles.error_msg}>Total Notice:{noticeNumber}</div>
+						<div className={styles.error_msg}>Total Notices:{noticeNum}</div>
 						<input
 							type="text"
 							placeholder="Title"
