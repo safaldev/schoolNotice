@@ -12,7 +12,7 @@ const Main = () => {
 	const getNoticeData = async () => {
 		axios.get('https://tribhuwan-admin.vercel.app/api/v1/noticeData')
 		  .then(response => {noticeNumber = response.data.length
-			console.log(noticeNumber)})
+			console.log(noticeNumber , "Hello")})
 		  .catch(error => {console.log(error)})
 	}
 
@@ -66,9 +66,7 @@ const Main = () => {
 				<div className={styles.left}>
 					<form id="noticeForm" className={styles.form_container} onSubmit={handleSubmit} >
 						<h1>Provide A Notice</h1>
-						<div className={styles.error_msg}>
-							{noticeNumber}
-						</div>
+					
 						<div className={styles.error_msg}>Total Notice:{noticeNumber}</div>
 						<input
 							type="text"
